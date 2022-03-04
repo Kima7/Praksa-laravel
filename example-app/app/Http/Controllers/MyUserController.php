@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
  
 use App\Http\Controllers\Controller;
 use App\Models\MyUser;
- 
+use Illuminate\Http\Request;
+
 class MyUserController extends Controller
 {
 
@@ -14,12 +15,13 @@ class MyUserController extends Controller
         return MyUser::all();
     }
 
-    public function store(MyUser $user)
+    public function store(Request $request,$id)
     {
+        //MyUser::create($request->name, $request->name, $request->name);
         $s = new MyUser();
-        $s->name = $user->name;
-        $s->nickname = $user->nickname;
-        $s->password = $user->password;
+        $s->name = $request->name;
+        $s->nickname = $request->nickname;
+        $s->password = $request->password;
         $s->save();
     }
 
