@@ -19,6 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('allUsers', [MyUserController::class, 'index'])->middleware('checkAge');
+
 Route::get('getUser/{id}', [MyUserController::class, 'show']);
 
 Route::post('createUser', [MyUserController::class, 'store']);
