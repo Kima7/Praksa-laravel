@@ -8,38 +8,39 @@ use App\Services\MyUserService;
 
 class MyUserController extends Controller
 {
+    protected $userService;
+
+    public function __construct(MyUserService $userService)
+    {
+        $this->userService = $userService;
+    }
 
     //display all users
     public function index()
     {
-        $service = new MyUserService();
-        return $service->displayAll();
+        return $this->userService->displayAll();
     }
 
     public function store(MyUserRequest $request)
     {
-        $service = new MyUserService();
-        $service->store($request);
+        $this->userService->store($request);
     }
 
     // Get user profile data for a given user id.
     public function show($id)
     {
-        $service = new MyUserService();
-        return $service->show($id);
+        return $this->userService->show($id);
     }
 
     public function update(MyUserRequest $request,$id)
     {
-        $service = new MyUserService();
-        $service->update($request,$id);
+        $this->userService->update($request,$id);
     }
 
     //delete user with given user id
     public function destroy($id)
     {
-        $service = new MyUserService();
-        $service->destroy($id);
+        $this->userService->destroy($id);
     }
 
 }
