@@ -29,7 +29,8 @@ class MyUserController extends Controller
     // Get user profile data for a given user id.
     public function show($id)
     {
-        return $this->userService->show($id);
+        $user = $this->userService->show($id);
+        return view('helloUser', ['name' => $user->name]);
     }
 
     public function update(MyUserRequest $request,$id)
