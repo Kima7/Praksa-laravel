@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyUserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,5 @@ Route::post('createUser', [MyUserController::class, 'store']);
 Route::put('updateUser/{id}', [MyUserController::class, 'update']);
 
 Route::delete('deleteUser/{id}', [MyUserController::class, 'destroy']);
+
+Route::resource('posts', PostController::class);

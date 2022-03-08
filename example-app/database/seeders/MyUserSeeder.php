@@ -17,10 +17,28 @@ class MyUserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('my_users')->insert([
-            'name' => 'nikola',
-            'nickname' => 'nik',
-            'password' => Hash::make('password'),
-        ]);
+        MyUser::truncate();
+
+        $users =  [
+            [
+                'name' => 'Nikola',
+                'nickname' => 'nik',
+                'password' => Hash::make('password'),
+            ],
+            [
+                'name' => 'Stefan',
+                'nickname' => 'stef',
+                'password' => Hash::make('password'),
+            ],
+            [
+                'name' => 'Marko',
+                'nickname' => 'maki',
+                'password' => Hash::make('password'),
+            ]
+          ];
+          foreach($users as $user)
+          {
+            MyUser::create($user);
+          }
     }
 }
