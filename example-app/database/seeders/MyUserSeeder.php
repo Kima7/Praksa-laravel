@@ -21,18 +21,21 @@ class MyUserSeeder extends Seeder
 
         $users =  [
             [
-                'name' => 'Nikola',
+                'name' => 'nikola',
                 'nickname' => 'nik',
+                'email' => 'nikola@gmail.com',
                 'password' => Hash::make('password'),
             ],
             [
-                'name' => 'Stefan',
+                'name' => 'stefan',
                 'nickname' => 'stef',
+                'email' => 'stefan@gmail.com',
                 'password' => Hash::make('password'),
             ],
             [
-                'name' => 'Marko',
+                'name' => 'marko',
                 'nickname' => 'maki',
+                'email' => 'marko@gmail.com',
                 'password' => Hash::make('password'),
             ]
           ];

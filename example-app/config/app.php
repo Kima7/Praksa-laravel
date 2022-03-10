@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Webpatser\Countries\CountriesServiceProvider;
+use Webpatser\Countries\CountriesFacade;
 
 return [
 
@@ -193,5 +195,4 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // ...
     ])->toArray(),
-
 ];
